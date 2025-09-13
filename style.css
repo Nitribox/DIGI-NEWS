@@ -7,16 +7,16 @@
 }
 
 :root {
-    --primary-text-color: #0b0691;
-    --secondary-text-color: #06881a;
-    --accent-color: #dfad0ac7;
+    --primary-text-color: #00b5d2;
+    --secondary-text-color: #0066c3;
+    --accent-color: #df0a0ac7;
     --accent-color-dark: #e53714;
 }
 
 body {
     font-family: "Poppins", sans-serif;
     color: var(--primary-text-color);
-    background-color: #cddb8d;
+    background-color: #a6d5ff;
 }
 
 p {
@@ -45,7 +45,7 @@ ul {
 }
 
 nav {
-    background-color: #a0e4e8;
+    background-color:#eee8a9;
     box-shadow: 0 0 4px #bbd0e2;
     position: fixed;
     top: 0;
@@ -99,7 +99,7 @@ nav {
 }
 
 .search-button {
-    background-color: rgb(237, 34, 19);
+    background-color:#0066c3;
     color: rgb(255, 255, 255);
     padding: 8px 24px;
     border: none;
@@ -111,7 +111,7 @@ nav {
 .search-button:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
-    border: 1px solid rgb(237, 34, 19);
+    border: 1px solid #00738a;
 }
 
 main {
