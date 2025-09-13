@@ -205,7 +205,7 @@ main {
     gap: 10px;
   }
  main {
-    margin-top: 120px; /* extra space for smaller screens */
+    margin-top: 221px;
   }
   .search-bar {
     width: 100%;
@@ -218,6 +218,7 @@ main {
   .search-button {
     width: 100%;
   }
+
 }
 
 @media (max-width: 480px) {
