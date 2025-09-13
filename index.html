@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News App</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Optional: jQuery if you need it elsewhere -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> -->
 </head>
 <body>
 
     <nav>
-        
         <div class="main-nav container flex">
             <a href="#" onclick="reload()" class="company-logo">
-                <img src="./DIGI NEWS.jpg"  alt="company logo">
+                <img src="./DIGI NEWS.jpg" alt="company logo">
             </a>
             <div class="nav-links">
                 <ul class="flex">
                     <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
                     <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
                     <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" id="top news" onclick="onNavItemClick('top news')">Top News</li>
+                    <li class="hover-link nav-item" id="new discovery" onclick="onNavItemClick('new discovery')">New Discovery</li>
                 </ul>
             </div>
             <div class="search-bar flex">
@@ -29,13 +32,13 @@
         </div>
     </nav>
     
-
     <main>
         <div class="cards-container container flex" id="cards-container">
-            
+            <!-- News cards will be rendered here -->
         </div>
     </main>
 
+    <!-- Template for news card -->
     <template id="template-news-card">
         <div class="card">
             <div class="card-header">
@@ -49,6 +52,7 @@
         </div>
     </template>
 
+    <!-- Your main JS -->
     <script defer src="script.js"></script>
 </body>
-</html> 
+</html>

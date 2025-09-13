@@ -1,18 +1,30 @@
-const API_KEY = "32d7518eb45242ef9cff04d74e13d859";
-const url = "https://newsapi.org/v2/everything?q=";
-
 window.addEventListener("load", () => fetchNews("India"));
 
-function reload() {
-    window.location.reload();
-}
+let curSelectedNav = null;
 
+// Fetch news from serverless function
 async function fetchNews(query) {
-    const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
-    const data = await res.json();
-    bindData(data.articles);
+    const cardsContainer = document.getElementById("cards-container");
+    cardsContainer.innerHTML = "<p>Loading news...</p>";
+
+    try {
+        const res = await fetch(`/api/news?q=${query}`);
+        if (!res.ok) throw new Error(`Server returned ${res.status}`);
+        const data = await res.json();
+
+        if (!data.articles || data.articles.length === 0) {
+            cardsContainer.innerHTML = "<p>No news found for this topic.</p>";
+            return;
+        }
+
+        bindData(data.articles);
+    } catch (err) {
+        console.error("Error fetching news:", err);
+        cardsContainer.innerHTML = "<p>Failed to load news. Please try again later.</p>";
+    }
 }
 
+// Render news cards
 function bindData(articles) {
     const cardsContainer = document.getElementById("cards-container");
     const newsCardTemplate = document.getElementById("template-news-card");
@@ -27,6 +39,7 @@ function bindData(articles) {
     });
 }
 
+// Fill data into a single card
 function fillDataInCard(cardClone, article) {
     const newsImg = cardClone.querySelector("#news-img");
     const newsTitle = cardClone.querySelector("#news-title");
@@ -38,7 +51,7 @@ function fillDataInCard(cardClone, article) {
     newsDesc.innerHTML = article.description;
 
     const date = new Date(article.publishedAt).toLocaleString("en-US", {
-        timeZone: "Asia/Jakarta",
+        timeZone: "Asia/Kolkata",
     });
 
     newsSource.innerHTML = `${article.source.name} · ${date}`;
@@ -48,7 +61,7 @@ function fillDataInCard(cardClone, article) {
     });
 }
 
-let curSelectedNav = null;
+// Navigation item click
 function onNavItemClick(id) {
     fetchNews(id);
     const navItem = document.getElementById(id);
@@ -57,13 +70,19 @@ function onNavItemClick(id) {
     curSelectedNav.classList.add("active");
 }
 
+// Search functionality
 const searchButton = document.getElementById("search-button");
 const searchText = document.getElementById("search-text");
 
 searchButton.addEventListener("click", () => {
-    const query = searchText.value;
+    const query = searchText.value.trim();
     if (!query) return;
     fetchNews(query);
     curSelectedNav?.classList.remove("active");
     curSelectedNav = null;
 });
+
+// Optional: reload page
+function reload() {
+    window.location.reload();
+}
