@@ -4,12 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-<<<<<<< HEAD
-  
-    
-    
-=======
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 :root {
@@ -22,11 +16,7 @@
 body {
     font-family: "Poppins", sans-serif;
     color: var(--primary-text-color);
-<<<<<<< HEAD
-    background-color: #cddb8d       ;
-=======
     background-color: #cddb8d;
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 p {
@@ -46,23 +36,12 @@ ul {
 .flex {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-            }
-
-.container {
-    max-width: 1180px;
-    margin-inline: auto;
-    overflow: hidden;
-=======
-    
 }
 
 .container {
     max-width: 1600px;
     margin-inline: auto;
     overflow: hidden;
-    
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 nav {
@@ -73,31 +52,16 @@ nav {
     z-index: 99;
     left: 0;
     right: 0;
-<<<<<<< HEAD
-    background-image: "./solo.jpg";
 }
 
 .main-nav {
-    justify-content: space-between;
+    justify-content: space-around;
     padding-block: 8px;
-=======
-    
-}
-
-.main-nav {
-    justify-content: space-around ;
-    padding-block: 8px;
-    
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 .company-logo img {
     height: 90px;  
     width: 145px;
-<<<<<<< HEAD
-    
-=======
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 .nav-links ul {
@@ -145,13 +109,9 @@ nav {
 }
 
 .search-button:hover {
-<<<<<<< HEAD
-    background-color:rgb(255, 255, 255);
-=======
     background-color: rgb(255, 255, 255);
     color: rgb(0, 0, 0);
     border: 1px solid rgb(237, 34, 19);
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 main {
@@ -160,29 +120,6 @@ main {
 }
 
 .cards-container {
-<<<<<<< HEAD
-    justify-content: space-between;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    align-items: start;
-}
-
-.card {
-    width: 360px;
-    min-height: 400px;
-    box-shadow: 10 10 4px #d4ecff;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #fffffffb;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: 1px 1px 8px #d4ecff;
-    background-color: #f9fdff;
-    transform: translateY(-2px);
-=======
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -208,7 +145,6 @@ main {
 .card:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transform: translateY(-4px);
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
 
 .card-header img {
@@ -218,13 +154,6 @@ main {
 }
 
 .card-content {
-<<<<<<< HEAD
-    padding: 12px;
-}
-
-.news-source {
-    margin-block: 12px;
-=======
     flex-grow: 1;
     padding: 12px;
     display: flex;
@@ -260,5 +189,4 @@ main {
 .news-source {
     font-size: 0.8rem;
     color: #777;
->>>>>>> 6c3146f (Initial commit - news website with Vercel API setup)
 }
